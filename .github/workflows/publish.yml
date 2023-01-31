@@ -40,8 +40,8 @@ jobs:
 
       - name: Git Configuration
         run: |
-          git config --global user.email "${GITHUB_ACTOR}"
-          git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
 
       - name: Install
         run: npm ci
@@ -55,7 +55,7 @@ jobs:
           CI: true
 
       - name: Update version to v${{ inputs.version }}
-        run: npm version ${{ inputs.version }} -m "Updated package version to %s"
+        run: npm version ${{ inputs.version }} -m "Updated package version to %s."
 
       - name: Git Push
         run: |
