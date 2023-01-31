@@ -2,6 +2,12 @@
   "name": "@cardboardrobots/merge",
   "version": "0.0.0",
   "description": "",
+  "repository": {
+    "url": "https://github.com/cardboardrobots/merge"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
