@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 name: Publish
-run-name: Publish ${{ inputs.version }}
+run-name: Publish v${{ inputs.version }}
 
 # Controls when the action will run.
 on:
@@ -23,7 +23,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   publish:
-    name: Publish ${{ inputs.version }}
+    name: Publish v${{ inputs.version }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -54,8 +54,8 @@ jobs:
         env:
           CI: true
 
-      - name: Update version to ${{ inputs.version }}
-        run: npm version ${{ inputs.version }} --git-tag-version
+      - name: Update version to v${{ inputs.version }}
+        run: npm version ${{ inputs.version }} -m "Updated package version to %s"
 
       - name: Git Push
         run: |
