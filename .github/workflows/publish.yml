@@ -57,7 +57,9 @@ jobs:
         run: npm version ${{ inputs.version }} --git-tag-version
 
       - name: Git Push
-        run: git push
+        run: |
+          git push
+          git push origin --tags
 
       - name: Publish
         run: npm publish
